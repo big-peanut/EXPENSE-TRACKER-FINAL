@@ -37,6 +37,10 @@ app.use(premiumRoutes)
 
 app.use(resetpwdRoutes)
 
+app.use((req,res,next)=>{
+    res.sendFile(path.join(__dirname,`public/${req.url}`))
+})
+
 const accessLogStream=fs.createWriteStream(path.join(__dirname,'access.log'),{flags:'a'})
 
 app.use(helmet())
