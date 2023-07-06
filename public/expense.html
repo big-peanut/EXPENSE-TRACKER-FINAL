@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <link rel="stylesheet" href="expense.css">
+    <title>Expense Manager</title>
+</head>
+
+<body>
+    <h1>Expense Form</h1>
+
+    <form id="expenseform">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" min="0" required><br><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required><br><br>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="" selected disabled>Select category</option>
+            <option value="food">Food</option>
+            <option value="transportation">Transportation</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="utilities">Utilities</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <button type="submit">Add</button>
+
+    </form>
+    <button id="buypremium">Buy Premium</button>
+    <button onclick="download()" id="downloadexpense">Download file</button>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <ul id="expenselist"></ul>
+    <div id="page"></div>
+    <script src="expense.js"></script>
+</body>
+
+</html>
